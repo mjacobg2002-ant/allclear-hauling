@@ -76,6 +76,32 @@
     });
   }
 
+  /* ---- Before/after sliders ---- */
+  document.querySelectorAll('[data-ba]').forEach(function (slider) {
+    var range = slider.querySelector('.ba-range');
+    if (!range) return;
+    var apply = function () { slider.style.setProperty('--pos', range.value + '%'); };
+    range.addEventListener('input', apply);
+    // let a press anywhere on the slider grab the handle immediately
+    var setFromX = function (clientX) {
+      var rect = slider.getBoundingClientRect();
+      var pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      range.value = pct; apply();
+    };
+    slider.addEventListener('pointerdown', function (e) {
+      setFromX(e.clientX);
+      var move = function (ev) { setFromX(ev.clientX); };
+      var up = function () {
+        window.removeEventListener('pointermove', move);
+        window.removeEventListener('pointerup', up);
+      };
+      window.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+    });
+    apply();
+  });
+
   /* ---- Footer year ---- */
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
