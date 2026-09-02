@@ -249,6 +249,7 @@ button { font-family: inherit; cursor: pointer; }
 .hero-photo[data-ph]::after, .founder-photo[data-ph]::after { color: rgba(255,255,255,0.4); }
 .hero-photo::before, .founder-photo::before { background: radial-gradient(circle at 70% 15%, rgba(46,166,242,0.28), transparent 60%); }
 
+.hero-photo .ph-badge { top: 16px; bottom: auto; }
 .ph-badge {
   position: absolute; left: 16px; bottom: 16px; z-index: 2;
   background: rgba(10,14,20,0.82); color: #fff; font-size: 12px; font-weight: 700;
@@ -347,6 +348,7 @@ button { font-family: inherit; cursor: pointer; }
 .work { background: var(--paper); }
 .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 18px; }
 .gallery .ph { border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: transform .3s ease; }
+.gallery .ph[data-ph]::after { content: none; }
 .gallery .ph:hover { transform: scale(1.015); }
 .g-tall { grid-row: span 2; }
 .g-wide { grid-column: span 2; }
