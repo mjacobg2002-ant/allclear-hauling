@@ -371,7 +371,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- Gallery ---------- */
 .work { background: var(--paper); }
-.gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 18px; }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; grid-auto-flow: row dense; gap: 18px; }
 .gallery .g-item { position: relative; margin: 0; border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; transition: transform .3s ease; }
 .gallery .g-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
 .gallery .g-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,12,18,0.55), transparent 45%); }
