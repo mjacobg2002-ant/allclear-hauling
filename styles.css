@@ -176,7 +176,8 @@ button { font-family: inherit; cursor: pointer; }
   padding: clamp(120px, 15vh, 180px) 0 clamp(64px, 8vw, 104px);
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: var(--ink); }
-.hero-video { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-video { width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; }
+.hero-video::-webkit-media-controls, .hero-video::-webkit-media-controls-panel, .hero-video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
 .hero-bg::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
@@ -569,6 +570,7 @@ button { font-family: inherit; cursor: pointer; }
   .ba-grid { grid-template-columns: 1fr; }
   .ba-arrow { transform: rotate(90deg); justify-self: center; }
   .hero { padding-bottom: 88px; }
+  .hero-visual { display: none; }
   .mobile-bar { display: flex; }
   body { padding-bottom: 76px; }
   .final-ctas .btn { width: 100%; }
