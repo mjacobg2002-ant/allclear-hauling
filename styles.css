@@ -571,6 +571,8 @@ button { font-family: inherit; cursor: pointer; }
   .call-pill-text { display: none; }
   .call-pill .ico { width: 40px; height: 40px; }
   .svc-grid, .steps, .trust-grid { grid-template-columns: 1fr; }
+  /* center the How It Works steps on mobile */
+  .step { text-align: center; }
   .gallery { grid-template-columns: 1fr; grid-auto-rows: 200px; }
   .g-wide, .g-tall, .g-sq { grid-column: span 1; grid-row: span 1; }
   .field-row, .two-col { grid-template-columns: 1fr; }
